@@ -163,8 +163,7 @@ def main():
     else:
         arch = identify_arch(image_id)
         make_image(arch, image_id)
-        res = infer_network(arch, image_id, qemu_dir)
-        while(not res): res = infer_network(arch, image_id, qemu_dir)
+        infer_network(arch, image_id, qemu_dir)
         final_run(image_id, arch, qemu_dir)
 
 
