@@ -112,6 +112,7 @@ def infer_network(arch, image_id, qemu_dir):
     interfaces = child.readline().strip().decode("utf8")
     print ("[+] Network interfaces:", interfaces)
     child.expect_exact(pexpect.EOF)
+    return interfaces
 
 
 def final_run(image_id, arch, qemu_dir):
@@ -162,7 +163,8 @@ def main():
     else:
         arch = identify_arch(image_id)
         make_image(arch, image_id)
-        infer_network(arch, image_id, qemu_dir)
+        res = infer_network(arch, image_id, qemu_dir)
+        while(not res)): res = infer_network(arch, image_id, qemu_dir)
         final_run(image_id, arch, qemu_dir)
 
 
