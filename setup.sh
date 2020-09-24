@@ -5,6 +5,7 @@ sudo apt update
 sudo apt install -y python-pip python3-pip python3-pexpect unzip busybox-static fakeroot kpartx snmp uml-utilities util-linux vlan qemu-system-arm qemu-system-mips qemu-system-x86 qemu-utils
 
 echo "Installing binwalk"
+export DEBIAN_FRONTEND=noninteractive
 git clone --depth=1 https://github.com/devttys0/binwalk.git
 cd binwalk
 sudo ./deps.sh --yes
