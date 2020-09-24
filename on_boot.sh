@@ -9,4 +9,4 @@ if [ -e $file ]; then
 /fat/ip/ipset.sh
 fi
 
-/fat/fat.py /fat/firmwares/*
+python3 /fat/fat.py /fat/firmwares/*
