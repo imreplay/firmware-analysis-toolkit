@@ -131,7 +131,7 @@ def final_run(image_id, arch, qemu_dir):
         pexpect.run(cmd)
 
     print ("[+] All set! Press ENTER to run the firmware...")
-    print ("[+] When running, press Ctrl + A X to terminate qemu")
+    input ("[+] When running, press Ctrl + A X to terminate qemu\n네트워크 설정 안되어있으면 끄고 다시 ㄱㄱ")
 
     print ("[+] Command line:", runsh_path)
     run_cmd = ["--", runsh_path]
